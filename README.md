@@ -1,3 +1,3 @@
-# Silentpower
+# rpi-amp-standby
 
-Toggle a GPIO switch if Pulseaudio is not making noise.
+Toggle GPIO 26 if Pulseaudio is not making a noise
