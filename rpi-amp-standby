@@ -11,7 +11,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(GPIO_CHANNEL, GPIO.OUT)
 
 arecord = subprocess.Popen(
-        ['arecord', '-D', 'pulse', '-q', '-r', '2000'],
+        'arecord -D pulse -q -r 2000'.split(),
         stdout=subprocess.PIPE)
 
 time.sleep(1)
@@ -25,7 +25,7 @@ while True:
     t = time.time()
     p = arecord.stdout.read(1)
     amp = abs(ord(p) - 128)
-    if amp > 1:
+    if amp > 0:
         if silence:
             silence = False
             GPIO.output(GPIO_CHANNEL, 0)
