@@ -18,7 +18,7 @@ time.sleep(1)
 print repr(arecord.stdout.read(100))
 
 silence = GPIO.input(GPIO_CHANNEL)
-delay = 20
+delay = 1800
 lastamp = time.time()
 
 while True:
